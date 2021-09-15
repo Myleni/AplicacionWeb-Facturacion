@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Editar Curso</h2>
+
+    <div class="form-row" *ngIf="error">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #facturaForm="ngForm">
+        <div class="form-row">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <label>Id Factura</label>
+                <input type="text" class="form-control" id="IdFactura" name="IdFactura" readonly
+                    placeholder="Ingrese el Id de la factura" #IdFactura [(ngModel)]="factura.IdFactura">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <label>Ruc</label>
+                <input type="text" class="form-control" id="Ruc" name="Ruc" maxlength="11" #Ruc
+                    [(ngModel)]="factura.Ruc">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <label>Razon Social</label>
+                <input type="text" class="form-control" id="RazonSocial" name="RazonSocial" maxlength="200" #RazonSocial
+                    [(ngModel)]="factura.RazonSocial">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <label>Fecha</label>
+                <input type="date" class="form-control" id="Fecha" name="Fecha" maxlength="10" #Fecha
+                    [(ngModel)]="factura.Fecha">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <label>Monto</label>
+                <input type="text" class="form-control" id="Total" name="Total" #Total [(ngModel)]="factura.Total">
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary btn-sm" (click)="edit()">Editar</button>
+    </form>
+</div>

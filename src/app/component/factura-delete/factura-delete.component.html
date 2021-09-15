@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Eliminar Curso</h2>
+
+    <div class="form-row" *ngIf="!error">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+           Desea Eliminar el registro?
+           <br>
+           <div class="button-group" role="group">
+              <button class="btn btn-danger btn-sm" (click)="delete()">Eliminar</button>
+              <a class="btn btn-primary btn-sm" [routerLink]="[ '/factura-list']">regresar</a>
+           </div>
+        </div>
+    </div>
+
+    <div class="form-row" *ngIf="error">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+   
+</div>
